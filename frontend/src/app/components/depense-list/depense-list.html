@@ -1,1 +1,17 @@
-<p>depense-list works!</p>
+<h1>Liste des dépenses</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Catégorie</th>
+      <th>Montant (€)</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of depenses">
+      <td>{{ d.categorie }}</td>
+      <td>{{ d.montant }}</td>
+      <td>{{ d.date }}</td>
+    </tr>
+  </tbody>
+</table>
