@@ -20,4 +20,7 @@ export class DepenseService {
   ajouterDepense(depense: any) {
   return this.http.post(this.apiUrl, depense);
   }
+  ajouterAbonnement(abonnement: any) {
+  return this.http.post('http://localhost:8081/api/abonnements', abonnement);
+}
 }

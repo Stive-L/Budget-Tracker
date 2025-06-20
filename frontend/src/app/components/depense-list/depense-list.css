@@ -1,0 +1,9 @@
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px 24px 8px 0; /* espace entre colonnes */
+  text-align: left;
+}

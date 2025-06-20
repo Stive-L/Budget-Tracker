@@ -1,27 +1,42 @@
 <div class="header">
   <h1>💸 Budget Tracker</h1>
   <p>Tracker de Dépenses & Abonnements</p>
-  <button (click)="toggleFormulaire()">Ajouter une dépense</button>
+  <button class="btn-primary" (click)="toggleFormulaire()">Ajouter une dépense</button>
+  <button class="btn-primary" (click)="toggleFormulaireAbonnement()">➕ Ajouter un abonnement</button>
+
 </div>
 
-<div style="display: flex; height: 100vh;">
-  <!-- Colonne gauche : Liste des dépenses -->
-  <div style="flex: 1; padding: 20px; border-right: 1px solid #ccc;">
+<!-- Modal pour ajouter une dépense -->
+<div *ngIf="afficherFormulaire" class="modal-backdrop">
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="toggleFormulaire()">×</span>
+      <app-ajouter-depense></app-ajouter-depense>
+    </div>
+  </div>
+</div>
+
+<!-- Modal pour ajouter un abonnement -->
+<div *ngIf="afficherFormulaireAbonnement" class="modal-backdrop">
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="toggleFormulaireAbonnement()">×</span>
+      <app-ajouter-abonnement></app-ajouter-abonnement>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="left-column">
+    <h2>Liste des dépenses</h2>
     <app-depense-list></app-depense-list>
   </div>
 
-  <div style="flex: 1; padding: 20px;">
+  <div class="divider"></div> <!-- ligne séparatrice -->
+
+  <div class="right-column">
     <h2>Répartition / Abonnements</h2>
-    <p>📊 Ici s'affichera la répartition ou le calendrier</p>
-    <button>🗓️ Afficher les abonnements à venir</button>
-  </div>
-</div>
-
-<div class="modal-backdrop" *ngIf="afficherFormulaire" (click)="toggleFormulaire()"></div>
-
-<div class="modal" *ngIf="afficherFormulaire">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <span class="close" (click)="toggleFormulaire()">&times;</span>
-    <app-ajouter-depense></app-ajouter-depense>
+    <button (click)="toggleCalendrier()">🗓️ Afficher les abonnements à venir</button>
+    <app-graphique-repartition *ngIf="!afficherCalendrier"></app-graphique-repartition>
   </div>
 </div>
