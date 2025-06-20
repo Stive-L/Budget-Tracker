@@ -11,17 +11,19 @@ public class Depense {
     private Long id;
 
     private String categorie;
-
+    private String description;
     private double montant;
 
     private LocalDate date;
 
     public Depense() {}
 
-    public Depense(String categorie, double montant, LocalDate date) {
+    public Depense(String categorie, double montant, LocalDate date, String description) {
         this.categorie = categorie;
         this.montant = montant;
+
         this.date = date;
+        this.description = description;
     }
 
     // Getters et setters
@@ -52,5 +54,13 @@ public class Depense {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+
+    public String getDescription(){
+        return description;
     }
 }
