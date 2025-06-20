@@ -8,6 +8,7 @@ import { DepenseService } from '../../services/depense';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './ajouter-depense.html',
+   styleUrls: ['./ajouter-depense.css']
 })
 export class AjouterDepenseComponent {
   nouvelleDepense = {

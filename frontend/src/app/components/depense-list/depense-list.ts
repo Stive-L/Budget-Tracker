@@ -24,4 +24,26 @@ export class DepenseListComponent implements OnInit {
       this.abonnements = data.sort((a, b) => new Date(b.dateDebut).getTime() - new Date(a.dateDebut).getTime());
     });
   }
+  categorieCouleurs: { [key: string]: string } = {
+  'courses': '#007bff',
+  'sorties': '#dc3545',
+  'loisir': '#28a745',
+  'transports': '#ffc107'
+  };
+
+ 
+  private stringToColor(str: string): string {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const hue = Math.abs(hash) % 360;
+    return `hsl(${hue}, 70%, 50%)`; 
+  }
+
+  getCategorieStyle(categorie: string): any {
+    const key = categorie.toLowerCase();
+    const couleur = this.categorieCouleurs[key] || this.stringToColor(key);
+    return { color: couleur, 'font-weight': 'bold' };
+  }
 }

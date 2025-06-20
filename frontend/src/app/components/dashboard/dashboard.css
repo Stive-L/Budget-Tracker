@@ -171,3 +171,10 @@
 .btn-primary:hover {
   background-color: #0069d9;
 }
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}

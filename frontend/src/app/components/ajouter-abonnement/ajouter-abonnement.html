@@ -1,17 +1,25 @@
 <h2>Ajouter un abonnement</h2>
+<form (ngSubmit)="ajouterAbonnement()" #formAbonnement="ngForm" class="abonnement-form">
 
-<form (ngSubmit)="ajouterAbonnement()" #formAbonnement="ngForm">
-  <label for="nom">Nom</label>
-  <input type="text" id="nom" name="nom" [(ngModel)]="nouvelAbonnement.nom" required />
+  <div class="form-row">
+    <label>Nom</label>
+    <input type="text" name="nom" [(ngModel)]="nouvelAbonnement.nom" required />
+  </div>
 
-  <label for="montant">Montant (€)</label>
-  <input type="number" id="montant" name="montant" [(ngModel)]="nouvelAbonnement.montant" required />
+  <div class="form-row">
+    <label>Montant (€)</label>
+    <input type="number" name="montant" [(ngModel)]="nouvelAbonnement.montant" required />
+  </div>
 
-  <label for="frequence">Fréquence</label>
-  <input type="text" id="frequence" name="frequence" [(ngModel)]="nouvelAbonnement.frequence" placeholder="ex: Mensuel" required />
+  <div class="form-row">
+    <label>Fréquence</label>
+    <input type="text" name="frequence" [(ngModel)]="nouvelAbonnement.frequence" placeholder="ex: Mensuel" required />
+  </div>
 
-  <label for="date">Date de début</label>
-  <input type="date" id="date" name="date" [(ngModel)]="nouvelAbonnement.dateDebut" required />
+  <div class="form-row">
+    <label>Date de début</label>
+    <input type="date" name="date" [(ngModel)]="nouvelAbonnement.dateDebut" required />
+  </div>
 
   <button type="submit" [disabled]="formAbonnement.invalid">Ajouter</button>
 </form>

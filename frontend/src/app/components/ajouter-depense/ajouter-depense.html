@@ -1,29 +1,25 @@
 <h2>Ajouter une dépense</h2>
+<form (ngSubmit)="ajouterDepense()" #formDepense="ngForm" class="depense-form">
 
-<form (ngSubmit)="ajouterDepense()" #depenseForm="ngForm">
-  <label>
-    Catégorie :
-    <input type="text" [(ngModel)]="nouvelleDepense.categorie" name="categorie" required />
-  </label>
-  <br />
+  <div class="form-row">
+    <label>Catégorie :</label>
+    <input type="text" name="categorie" [(ngModel)]="nouvelleDepense.categorie" required />
+  </div>
 
-  <label>
-    Description :
-    <input type="text" [(ngModel)]="nouvelleDepense.description" name="description" required />
-  </label>
-  <br />
+  <div class="form-row">
+    <label>Description :</label>
+    <input type="text" name="description" [(ngModel)]="nouvelleDepense.description" required />
+  </div>
 
-  <label>
-    Montant (€) :
-    <input type="number" [(ngModel)]="nouvelleDepense.montant" name="montant" required />
-  </label>
-  <br />
+  <div class="form-row">
+    <label>Montant (€) :</label>
+    <input type="number" name="montant" [(ngModel)]="nouvelleDepense.montant" required />
+  </div>
 
-  <label>
-    Date :
-    <input type="date" [(ngModel)]="nouvelleDepense.date" name="date" required />
-  </label>
-  <br /><br />
+  <div class="form-row">
+    <label>Date :</label>
+    <input type="date" name="date" [(ngModel)]="nouvelleDepense.date" required />
+  </div>
 
-  <button type="submit">Ajouter</button>
+  <button type="submit" [disabled]="formDepense.invalid">Ajouter</button>
 </form>

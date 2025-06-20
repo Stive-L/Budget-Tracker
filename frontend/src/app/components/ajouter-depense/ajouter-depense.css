@@ -1,0 +1,42 @@
+.depense-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-row label {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.depense-form input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+}
+
+.depense-form button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.depense-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

@@ -10,7 +10,7 @@
   <tbody>
     <!-- Dépenses classiques -->
     <tr *ngFor="let d of depenses">
-      <td>{{ d.categorie }}</td>
+      <td [ngStyle]="getCategorieStyle(d.categorie)">{{ d.categorie }}</td>
       <td>{{ d.description }}</td>
       <td>{{ d.montant }}</td>
       <td>{{ d.date }}</td>
