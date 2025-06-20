@@ -3,6 +3,7 @@ package com.budget.backend.controller;
 import com.budget.backend.model.Depense;
 import com.budget.backend.repository.DepenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,31 +27,27 @@ public class DepenseController {
         return depenseRepository.save(depense);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteDepense(@PathVariable Long id) {
-        depenseRepository.deleteById(id);
-    }
-
+    // PUT /api/depenses/{id}
     @PutMapping("/{id}")
-    public ResponseEntity<Abonnement> updateAbonnement(@PathVariable Long id, @RequestBody Abonnement newAbonnement) {
-    return abonnementRepository.findById(id)
-        .map(abonnement -> {
-            abonnement.setNom(newAbonnement.getNom());
-            abonnement.setMontant(newAbonnement.getMontant());
-            abonnement.setDateDebut(newAbonnement.getDateDebut());
-            abonnement.setFrequence(newAbonnement.getFrequence());
-            return ResponseEntity.ok(abonnementRepository.save(abonnement));
-        })
-        .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<Depense> updateDepense(@PathVariable Long id, @RequestBody Depense newDepense) {
+        return depenseRepository.findById(id)
+            .map(depense -> {
+                depense.setCategorie(newDepense.getCategorie());
+                depense.setMontant(newDepense.getMontant());
+                depense.setDate(newDepense.getDate());
+                return ResponseEntity.ok(depenseRepository.save(depense));
+            })
+            .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // DELETE /api/depenses/{id}
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteAbonnement(@PathVariable Long id) {
-    if (abonnementRepository.existsById(id)) {
-        abonnementRepository.deleteById(id);
-        return ResponseEntity.noContent().build(); // 204 No Content
-    } else {
-        return ResponseEntity.notFound().build(); // 404
-    }
+    public ResponseEntity<Void> deleteDepense(@PathVariable Long id) {
+        if (depenseRepository.existsById(id)) {
+            depenseRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
