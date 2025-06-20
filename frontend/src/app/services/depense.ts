@@ -13,4 +13,11 @@ export class DepenseService {
   getDepenses(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  getAbonnementsPasses() {
+  return this.http.get<any[]>('http://localhost:8081/api/abonnements/passes');
+  }
+  ajouterDepense(depense: any) {
+  return this.http.post(this.apiUrl, depense);
+  }
 }

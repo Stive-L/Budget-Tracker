@@ -1,17 +1,29 @@
-<h1>Liste des dépenses</h1>
+<h2>Liste des dépenses</h2>
+
 <table>
   <thead>
     <tr>
       <th>Catégorie</th>
+      <th>Description</th>
       <th>Montant (€)</th>
       <th>Date</th>
     </tr>
   </thead>
   <tbody>
+    <!-- Dépenses classiques -->
     <tr *ngFor="let d of depenses">
       <td>{{ d.categorie }}</td>
+      <td>{{ d.description }}</td>
       <td>{{ d.montant }}</td>
       <td>{{ d.date }}</td>
+    </tr>
+
+    <!-- Abonnements passés -->
+    <tr *ngFor="let a of abonnements">
+      <td>Abonnement</td>
+      <td>{{ a.nom }}</td>
+      <td>{{ a.montant }}</td>
+      <td>{{ a.dateDebut }}</td>
     </tr>
   </tbody>
 </table>

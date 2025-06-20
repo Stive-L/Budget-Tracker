@@ -1,0 +1,29 @@
+<h2>Ajouter une dépense</h2>
+
+<form (ngSubmit)="ajouterDepense()" #depenseForm="ngForm">
+  <label>
+    Catégorie :
+    <input type="text" [(ngModel)]="nouvelleDepense.categorie" name="categorie" required />
+  </label>
+  <br />
+
+  <label>
+    Description :
+    <input type="text" [(ngModel)]="nouvelleDepense.description" name="description" required />
+  </label>
+  <br />
+
+  <label>
+    Montant (€) :
+    <input type="number" [(ngModel)]="nouvelleDepense.montant" name="montant" required />
+  </label>
+  <br />
+
+  <label>
+    Date :
+    <input type="date" [(ngModel)]="nouvelleDepense.date" name="date" required />
+  </label>
+  <br /><br />
+
+  <button type="submit">Ajouter</button>
+</form>

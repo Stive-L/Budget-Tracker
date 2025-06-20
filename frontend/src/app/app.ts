@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { DepenseListComponent } from './components/depense-list/depense-list'; // ← ajoute ça !
-
+import { DashboardComponent } from './components/dashboard/dashboard'; // ← ✔️ remplace l'import
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [DepenseListComponent],
+  imports: [DashboardComponent],
   templateUrl: './app.html',
 })
 export class AppComponent {}

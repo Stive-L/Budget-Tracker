@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DepenseListComponent } from '../depense-list/depense-list';
+import { AjouterDepenseComponent } from '../ajouter-depense/ajouter-depense';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, DepenseListComponent, AjouterDepenseComponent],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  styleUrls: ['./dashboard.css']
 })
-export class Dashboard {
-
+export class DashboardComponent {
+  afficherFormulaire = false;
+  afficherCalendrier = false;
+  toggleFormulaire() {
+    this.afficherFormulaire = !this.afficherFormulaire;
+  }
 }
