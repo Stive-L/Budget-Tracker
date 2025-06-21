@@ -67,3 +67,14 @@
   border-top: 1px solid #ccc;
   font-size: 0.9rem;
 }
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+  margin-left: 4px;
+}
+.delete-btn:hover {
+  font-weight: bold;
+}

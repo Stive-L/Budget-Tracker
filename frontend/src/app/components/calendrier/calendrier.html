@@ -18,20 +18,26 @@
         <span 
           class="dot" 
           *ngIf="d.abonnement" 
-          [ngStyle]="{ 'background-color': getColorForDate(getFullDate(d.day)) }"
+          [ngStyle]="{ 'background-color': d.color }"
         ></span>
       </span>
     </div>
   </div>
 </div>
 
-<div class="calendar-legend" *ngIf="abonnementsDuMois.length > 0">
-  <div *ngFor="let abo of abonnementsDuMois">
+<div class="calendar-legend" *ngIf="abonnementsGroupesParJour.length > 0">
+  <div *ngFor="let groupe of abonnementsGroupesParJour">
     <span 
       class="legend-point" 
-      [ngStyle]="{ 'background-color': getColorForDate(abo.dateDebut) }"
+      [ngStyle]="{ 'background-color': groupe.color }"
     ></span>
-    <strong>{{ getDayFromDate(abo.dateDebut) }} {{ getMonthName() }}</strong> :
-    prélèvement {{ abo.nom }} ({{ abo.montant | number:'1.2-2' }} €)
+    <strong>{{ getDayFromDate(groupe.date) }} {{ getMonthName() }}</strong> :
+    prélèvements
+    <span *ngFor="let abo of groupe.abonnements; let isLast = last">
+      <strong>{{ abo.nom }}</strong> ({{ abo.montant | number:'1.2-2' }} €)
+      <button (click)="supprimerAbonnement(abo.id)" class="delete-btn">❌</button>
+      <span *ngIf="!isLast">, </span>
+    </span>
   </div>
 </div>
+

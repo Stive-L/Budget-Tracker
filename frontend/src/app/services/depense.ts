@@ -26,4 +26,7 @@ export class DepenseService {
   getAbonnements(): Observable<any[]> {
   return this.http.get<any[]>('http://localhost:8081/api/abonnements');
   }
+  supprimerAbonnement(id: number) {
+    return this.http.delete(`http://localhost:8081/api/abonnements/${id}`);
+  }
 }
