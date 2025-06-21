@@ -16,14 +16,14 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 ## Technologies utilisées
 
 ### Frontend
-- [Angular](https://angular.io/) – Framework web
+- [Angular 17](https://angular.io/) – Framework web
 - [Chart.js](https://www.chartjs.org/) – Visualisation des données (camembert)
-- HTML, CSS, TypeScript
+- HTML5, CSS3, TypeScript
 
 ### Backend
 - [Spring Boot](https://spring.io/projects/spring-boot) – API REST
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa) – Accès base de données
-- Java
+- Java 17
 
 ### Base de données
 - [MySQL](https://www.mysql.com/) – Stockage des abonnements et dépenses sur 2 tables
@@ -33,3 +33,61 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 ## Aperçu
 
 ![Aperçu de l'application](./assets/demo.gif)
+
+---
+
+## 🚀 Installation
+
+### 🔧 Backend – Spring Boot
+
+1. **Se positionner dans le dossier backend** :
+   ```bash
+   cd backend
+   ```
+
+2. **Lancer le projet** :
+   ```bash
+   mvn spring-boot:run
+   ```
+
+3. Le backend est accessible à l'adresse :
+   ```
+   http://localhost:8080
+   ```
+
+4. **Configuration de la base de données** :  
+   Dans le fichier `src/main/resources/application.properties`, configure tes identifiants MySQL :
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/budget_tracker
+   spring.datasource.username=ton_utilisateur
+   spring.datasource.password=ton_mot_de_passe
+
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.show-sql=true
+   ```
+
+---
+
+### 💻 Frontend – Angular
+
+1. **Se positionner dans le dossier frontend** :
+   ```bash
+   cd frontend
+   ```
+
+2. **Installer les dépendances** :
+   ```bash
+   npm install
+   ```
+
+3. **Lancer l’application Angular** :
+   ```bash
+   ng serve
+   ```
+
+4. L’interface est disponible sur :
+   ```
+   http://localhost:4200
+   ```
+
+---
