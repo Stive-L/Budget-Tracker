@@ -16,14 +16,14 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 ## Technologies utilisées
 
 ### Frontend
-- [Angular 17](https://angular.io/) – Framework web
+- [Angular](https://angular.io/) – Framework web
 - [Chart.js](https://www.chartjs.org/) – Visualisation des données (camembert)
-- HTML5, CSS3, TypeScript
+- HTML, CSS, TypeScript
 
 ### Backend
 - [Spring Boot](https://spring.io/projects/spring-boot) – API REST
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa) – Accès base de données
-- Java 17
+- Java
 
 ### Base de données
 - [MySQL](https://www.mysql.com/) – Stockage des abonnements et dépenses sur 2 tables
