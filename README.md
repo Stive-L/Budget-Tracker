@@ -91,3 +91,8 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
    ```
 
 ---
+
+## Auteur
+
+Développé par Zhuo Chan Stive LEE
+
