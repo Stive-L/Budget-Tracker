@@ -27,3 +27,9 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 
 ### Base de données
 - [MySQL](https://www.mysql.com/) – Stockage des abonnements et dépenses sur 2 tables
+
+---
+
+## Aperçu
+
+![Aperçu de l'application](./assets/demo.gif)
