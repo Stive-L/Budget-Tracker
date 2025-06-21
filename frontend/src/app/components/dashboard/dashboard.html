@@ -39,5 +39,6 @@
     <h2>Répartition / Abonnements</h2>
     <button (click)="toggleCalendrier()">🗓️ Afficher les abonnements à venir</button>
     <app-graphique-repartition *ngIf="!afficherCalendrier"></app-graphique-repartition>
+    <app-calendrier *ngIf="afficherCalendrier"></app-calendrier>
   </div>
 </div>

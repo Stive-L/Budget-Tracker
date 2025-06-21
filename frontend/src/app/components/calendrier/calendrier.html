@@ -1,0 +1,37 @@
+<div class="calendar">
+  <div class="calendar-header">
+    <button (click)="previousMonth()">«</button>
+    <h3>📅 Calendrier – {{ getMonthName() | titlecase }} {{ currentYear }}</h3>
+    <button (click)="nextMonth()">»</button>
+  </div>
+
+  <div class="calendar-grid">
+    <div class="day-name" *ngFor="let d of ['L', 'M', 'M', 'J', 'V', 'S', 'D']">{{ d }}</div>
+
+    <div 
+      class="day"
+      *ngFor="let d of daysInMonth"
+      [class.today]="d?.isToday"
+    >
+      <span *ngIf="d">
+        {{ d.day }}
+        <span 
+          class="dot" 
+          *ngIf="d.abonnement" 
+          [ngStyle]="{ 'background-color': getColorForDate(getFullDate(d.day)) }"
+        ></span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="calendar-legend" *ngIf="abonnementsDuMois.length > 0">
+  <div *ngFor="let abo of abonnementsDuMois">
+    <span 
+      class="legend-point" 
+      [ngStyle]="{ 'background-color': getColorForDate(abo.dateDebut) }"
+    ></span>
+    <strong>{{ getDayFromDate(abo.dateDebut) }} {{ getMonthName() }}</strong> :
+    prélèvement {{ abo.nom }} ({{ abo.montant | number:'1.2-2' }} €)
+  </div>
+</div>

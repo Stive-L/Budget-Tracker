@@ -22,5 +22,8 @@ export class DepenseService {
   }
   ajouterAbonnement(abonnement: any) {
   return this.http.post('http://localhost:8081/api/abonnements', abonnement);
-}
+  }
+  getAbonnements(): Observable<any[]> {
+  return this.http.get<any[]>('http://localhost:8081/api/abonnements');
+  }
 }

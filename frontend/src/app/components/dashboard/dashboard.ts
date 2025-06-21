@@ -4,13 +4,15 @@ import { DepenseListComponent } from '../depense-list/depense-list';
 import { AjouterDepenseComponent } from '../ajouter-depense/ajouter-depense';
 import { GraphiqueRepartitionComponent } from '../graphique-repartition/graphique-repartition';
 import { AjouterAbonnementComponent } from '../ajouter-abonnement/ajouter-abonnement';
+import { CalendrierComponent } from '../calendrier/calendrier';
+
 
 
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, DepenseListComponent, AjouterDepenseComponent,GraphiqueRepartitionComponent,AjouterAbonnementComponent],
+  imports: [CommonModule, DepenseListComponent, AjouterDepenseComponent,GraphiqueRepartitionComponent,AjouterAbonnementComponent, CalendrierComponent],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css']
 })
