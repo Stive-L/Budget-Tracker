@@ -16,7 +16,7 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 ## Technologies utilisées
 
 ### Frontend
-- [Angular 17](https://angular.io/) – Framework web moderne
+- [Angular 17](https://angular.io/) – Framework web
 - [Chart.js](https://www.chartjs.org/) – Visualisation des données (camembert)
 - HTML5, CSS3, TypeScript
 
@@ -26,4 +26,4 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 - Java 17
 
 ### Base de données
-- [MySQL 8](https://www.mysql.com/) – Stockage des abonnements et dépenses
+- [MySQL 8](https://www.mysql.com/) – Stockage des abonnements et dépenses sur 2 tables
