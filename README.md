@@ -6,9 +6,9 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 
 ## Fonctionnalités
 
-- Répartition **graphique, sous forme de camembert,** des dépenses mensuelles, en se basant sur les catégories
-- Suivi des **abonnements mensuels** (Netflix, Spotify, etc.), via un **calendrier** avec les prochains prélèvement à venir
-- Gestion des **dépenses ponctuelles**
+- Répartition des dépenses mensuelles sous forme de **graphique (camembert)**, en se basant sur les catégories
+- Suivi des **abonnements hebdomadaires/mensuels/annuels** (Netflix, Spotify, etc.), via un **calendrier** avec les prochains prélèvement à venir
+- Gestion, c'est-à-dire ajout/suppresions, des **dépenses ponctuelles** ou **abonnements**
 - Affichage du **total mensuel**
 
 ---
