@@ -47,7 +47,9 @@
 
   <div class="right-column">
     <h2>Répartition / Abonnements</h2>
-    <button (click)="toggleCalendrier()">🗓️ Afficher les abonnements à venir</button>
+    <button (click)="toggleCalendrier()">
+      {{ texteBoutonCalendrier }}
+    </button>
     <div style="margin-top: 0.5rem; font-weight: bold;">
       Total pour {{ moisActuelTexte }} : {{ totalPourMois | number:'1.2-2' }} €
     </div>

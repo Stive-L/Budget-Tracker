@@ -74,4 +74,10 @@ export class DashboardComponent implements OnInit {
   get abonnementsDuMois(): any[] {
     return this.tousAbonnements.filter(a => a.dateDebut?.startsWith(this.moisSelectionne));
   }
+  
+  get texteBoutonCalendrier(): string {
+  return this.afficherCalendrier
+    ? '📊 Afficher la répartition des dépenses'
+    : '🗓️ Afficher les abonnements à venir';
+  }
 }

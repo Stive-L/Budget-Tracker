@@ -69,4 +69,18 @@ export class DepenseListComponent implements OnInit, OnChanges {
     const couleur = this.categorieCouleurs[key] || this.stringToColor(key);
     return { color: couleur, 'font-weight': 'bold' };
   }
+
+  supprimerDepense(id: number) {
+    this.depenseService.supprimerDepense(id).subscribe(() => {
+      this.depenses = this.depenses.filter(d => d.id !== id);
+      this.filtrerDonnées();
+    });
+  }
+
+  supprimerAbonnement(id: number) {
+    this.depenseService.supprimerAbonnement(id).subscribe(() => {
+      this.abonnements = this.abonnements.filter(a => a.id !== id);
+      this.filtrerDonnées();
+    });
+  }
 }

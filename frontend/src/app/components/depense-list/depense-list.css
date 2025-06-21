@@ -7,3 +7,14 @@ td {
   padding: 8px 24px 8px 0; /* espace entre colonnes */
   text-align: left;
 }
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+  margin-left: 4px;
+}
+.delete-btn:hover {
+  font-weight: bold;
+}

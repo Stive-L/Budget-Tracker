@@ -29,4 +29,7 @@ export class DepenseService {
   supprimerAbonnement(id: number) {
     return this.http.delete(`http://localhost:8081/api/abonnements/${id}`);
   }
+  supprimerDepense(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }
