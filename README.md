@@ -56,7 +56,7 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
    ```
 
 4. **Configuration de la base de données** :  
-   Dans le fichier `src/main/resources/application.properties`, configure tes identifiants MySQL :
+   Dans le fichier `src/main/resources/application.properties`, configure les identifiants MySQL :
    ```properties
    spring.datasource.url=jdbc:mysql://localhost:3306/budget_tracker
    spring.datasource.username=ton_utilisateur
