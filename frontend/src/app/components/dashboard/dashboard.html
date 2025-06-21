@@ -30,15 +30,30 @@
 <div class="content">
   <div class="left-column">
     <h2>Liste des dépenses</h2>
-    <app-depense-list></app-depense-list>
+
+    <div class="month-selector" style="margin-bottom: 1rem;">
+      <label for="mois">📆 Mois :</label>
+      <input 
+        type="month" 
+        id="mois" 
+        [(ngModel)]="moisSelectionne"
+        style="margin-left: 0.5rem;" />
+    </div>
+
+    <app-depense-list [mois]="moisSelectionne"></app-depense-list>
   </div>
 
-  <div class="divider"></div> <!-- ligne séparatrice -->
+  <div class="divider"></div>
 
   <div class="right-column">
     <h2>Répartition / Abonnements</h2>
     <button (click)="toggleCalendrier()">🗓️ Afficher les abonnements à venir</button>
-    <app-graphique-repartition *ngIf="!afficherCalendrier"></app-graphique-repartition>
+
+    <app-graphique-repartition
+      *ngIf="!afficherCalendrier"
+      [mois]="moisSelectionne">
+    </app-graphique-repartition>
+
     <app-calendrier *ngIf="afficherCalendrier"></app-calendrier>
   </div>
 </div>

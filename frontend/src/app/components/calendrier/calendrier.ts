@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DepenseService } from '../../services/depense'; // ajuste le chemin si besoin
+import { DepenseService } from '../../services/depense';
 
 @Component({
   selector: 'app-calendrier',
@@ -30,7 +30,7 @@ export class CalendrierComponent implements OnInit {
 
   updateCalendar(): void {
     const firstDayOfMonth = new Date(this.currentYear, this.currentMonth, 1);
-    const startingDay = firstDayOfMonth.getDay(); // 0 = dimanche
+    const startingDay = firstDayOfMonth.getDay();
 
     const daysInMonth = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
     const days: any[] = [];
@@ -100,5 +100,13 @@ export class CalendrierComponent implements OnInit {
       const date = new Date(a.dateDebut);
       return date.getMonth() === this.currentMonth && date.getFullYear() === this.currentYear;
     });
+  }
+
+  getFullDate(day: number): string {
+    return `${this.currentYear}-${this.format(this.currentMonth + 1)}-${this.format(day)}`;
+  }
+
+  getDayFromDate(dateStr: string): number {
+    return new Date(dateStr).getDate();
   }
 }
