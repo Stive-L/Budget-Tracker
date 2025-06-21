@@ -36,9 +36,9 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 
 ---
 
-## 🚀 Installation
+## Installation
 
-### 🔧 Backend – Spring Boot
+### Backend – Spring Boot
 
 1. **Se positionner dans le dossier backend** :
    ```bash
@@ -68,7 +68,7 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 
 ---
 
-### 💻 Frontend – Angular
+### Frontend – Angular
 
 1. **Se positionner dans le dossier frontend** :
    ```bash
