@@ -26,4 +26,4 @@ Une application web de gestion de budget permettant de suivre ses **dépenses** 
 - Java 17
 
 ### Base de données
-- [MySQL 8](https://www.mysql.com/) – Stockage des abonnements et dépenses sur 2 tables
+- [MySQL](https://www.mysql.com/) – Stockage des abonnements et dépenses sur 2 tables
